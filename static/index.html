@@ -1,0 +1,1084 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Pragma" content="no-cache">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="static/css/main.css">
+  <link rel="stylesheet" type="text/css" href="static/css/floating-labels.css">
+  <link rel="stylesheet" type="text/css" href="static/css/buttons.css">
+  <link rel="stylesheet" type="text/css" href="static/css/util.css">
+  <link rel="stylesheet" type="text/css" href="static/css/team.css">
+  <!-- <link rel="stylesheet" type="text/css" href="static/css/hover.css"> -->
+
+  <!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="static/css/main.css">
+  <!--===============================================================================================-->
+  <style type="text/css">
+    .box{
+      text-align: center;
+      background: #000;
+      overflow: hidden;
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 250px;
+      width:  250px;
+      margin: 25px;
+      margin-right: 0px;
+    }
+
+    .box img{
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s ease-out 0s;
+    }
+
+    .box:hover img{
+      opacity: 0.4;
+      transform: scale(1.1);
+    }
+
+    .box .box-content{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .box .title{
+      font-size: 22px;
+      font-weight: 700;
+      color: #f95b34;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0;
+      margin: 0 0 10px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+    }
+
+    .box:hover .title{
+      opacity: 1;
+    }
+
+    .box-content .overlay{
+      width: 78px;
+      height: 78px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-origin: 0 0;
+      transform: rotate(45deg) translate(-50%, -50%);
+    }
+
+    .box-content .overlay:before,
+    .box-content .overlay:after,
+    .box-content .overlay div:before,
+    .box-content .overlay div:after{
+      content: "";
+      display: block;
+      position: absolute;
+      background: #f95b34;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .box-content .overlay:before,
+    .box-content .overlay:after{
+      width: 0;
+      height: 2px;
+
+    }
+
+    .box-content .overlay div:before,
+    .box-content .overlay div:after{
+      width: 2px;
+      height: 0;
+    }
+
+    .box-content .overlay:before,
+    .box-content .overlay div:before{
+      top: 0;
+      left: 0;
+    }
+
+    .box-content .overlay:after,
+    .box-content .overlay div:after{
+      bottom: 0;
+      right: 0;
+    }
+
+    .box:hover .overlay:before,
+    .box:hover .overlay:after{
+      width: 65%;
+    }
+
+    .box:hover .overlay div:before,
+    .box:hover .overlay div:after{
+      height: 65%;
+    }
+
+    @media only screen and (max-width:990px){
+      .box{ margin-bottom: 30px; }
+    }
+
+  </style>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg fixed-top ">
+  <!-- <img src="https://nm.mephi.ru/content/image/logo.png" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+  <a class="navbar-brand" href="#home">Главная</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse " id="navbarSupportedContent">
+    <ul class="navbar-nav mr-4">
+      <li class="nav-item">
+        <a class="nav-link" href="#about">О кафедре</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#workers">Сотрудники</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="#students">Студентам</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="#">Учебные материалы</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="#contacts">Контакты</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<header class="header" id="home">
+  <div class="main">
+    <div class="round1">
+    </div>
+  </div>
+
+  <div class="overlay">
+    <div class="row justify-content-between align-items-center first-vertical-center">
+      <div class="col-md-3 left-bar align-items-center" >
+        <div class="text-center mb-4 left-bar-item">
+          <a href="#about">
+            <button type="button" class="btn btn-secondary fs-10 w-350">
+              О кафедре
+            </button>
+          </a>
+        </div>
+        <div class="text-center mb-4 left-bar-item">
+          <a href="#">
+            <button type="button" class="btn btn-secondary fs-10 w-350">
+              Курсы профессиональной переподготовки
+            </button>
+          </a>
+        </div>
+        <div class="text-center mb-4 left-bar-item">
+          <a href="#students">
+            <button type="button" class="btn btn-secondary fs-10 w-350">
+              Студентам
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div class="main row justify-content-center align-items-center">
+        <div class="col">
+          <h1 class="fa-2x text-center changing-text">
+            Кафедра физики ускорителей и радиационной медицины
+            <br>
+            <br>
+          </h1>
+          <div class="row justify-content-center">
+            <div class="col-5 align-self-center text-center mb-4 left-bar-item">
+              <a href="#students">
+                <button class="btn btn-lg btn-primary btn-block"> Набор 2020 </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+      <div class="col-md-3 right-bar">
+        <form class="form-signin">
+          <div class="text-center mb-4">
+            <h1 class="h3 mb-3 font-weight-normal">Вход</h1>
+            <!-- <p>2 46 38 1</p> -->
+            <!-- <p>116 14 20</p> -->
+            <!-- <p>15 14 21</p> -->
+            <!-- <p>14 0 17...</p> -->
+          </div>
+
+          <div class="form-label-group">
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+            <label for="inputEmail">Логин или e-mail</label>
+          </div>
+
+          <div class="form-label-group">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+            <label for="inputPassword">Пароль</label>
+          </div>
+
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me"> Запомнить меня
+            </label>
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Авторизироваться</button>
+          <!-- <p class="mt-5 mb-3 text-muted text-center">© 2020</p> -->
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+</header>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<div class="team">
+  <div class="container" id="workers">
+
+    <div class="row">
+      <div class="col align-self-center" style="margin: 25px">
+        <h1 class="text-center" style="color: #f95b34">Состав кафедры</h1>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-4 col-sm-6">
+        <a href="#AP-Chernyaev">
+          <div class="box">
+            <img src="static/images/AP-Chernyaev.jpeg">
+            <div class="box-content">
+              <div class="overlay">
+                <div>
+                </div>
+              </div>
+              <h3 class="title">
+                <p style="color: #f95b34; font-size: 16pt;"> А.П. Черняев        </p>
+                <p style="color: #ff876a; font-size:  8pt;"> Заведующий кафедрой </p>
+              </h3>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <a href="#VV-Rozanov">
+          <div class="box">
+            <img src="static/images/VV-Rozanov.jpg">
+            <div class="box-content">
+              <div class="overlay">
+                <div>
+                </div>
+              </div>
+              <h3 class="title">
+                <p style="color: #f95b34; font-size: 16pt;"> В.В. Розанов </p>
+                <p style="color: #ff876a; font-size:  8pt;"> Профессор    </p>
+              </h3>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <a href="#SM-Varzar">
+          <div class="box">
+            <img src="static/images/SM-Varzar.jpg">
+            <div class="box-content">
+              <div class="overlay">
+                <div>
+                </div>
+              </div>
+              <h3 class="title">
+                <p style="color: #f95b34; font-size: 16pt;"> С.М. Варзарь </p>
+                <p style="color: #ff876a; font-size:  8pt;"> Доцент       </p>
+              </h3>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <a href="#SA-Tereshchenko">
+          <div class="box">
+            <img src="static/images/SA-Tereshchenko.jpg">
+            <div class="box-content">
+              <div class="overlay">
+                <div>
+                </div>
+              </div>
+              <h3 class="title">
+                <p style="color: #f95b34; font-size: 16pt;"> С.А. Терещенко </p>
+                <p style="color: #ff876a; font-size:  8pt;"> Профессор </p>
+              </h3>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <a href="#EK-Kozlova">
+          <div class="box">
+            <img src="static/images/EK-Kozlova.jpg">
+            <div class="box-content">
+              <div class="overlay">
+                <div>
+                </div>
+              </div>
+              <h3 class="title">
+                <p style="color: #f95b34; font-size: 16pt;"> Е.К. Козлова </p>
+                <p style="color: #ff876a; font-size:  8pt;"> Профессор</p>
+              </h3>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <a href="#PY-Borschegovskaya">
+          <div class="box">
+            <img src="static/images/PY-Borschegovskaya.jpg">
+            <div class="box-content">
+              <div class="overlay">
+                <div>
+                </div>
+              </div>
+              <h3 class="title">
+                <p style="color: #f95b34; font-size: 16pt;"> П.Ю. Борщеговская </p>
+                <p style="color: #ff876a; font-size:  8pt;"> Ассистент</p>
+              </h3>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <a href="#YA-Bliznyuk">
+          <div class="box">
+            <img src="static/images/YA-Bliznyuk.jpg">
+            <div class="box-content">
+              <div class="overlay">
+                <div>
+                </div>
+              </div>
+              <h3 class="title">
+                <p style="color: #f95b34; font-size: 16pt;"> У.А. Близнюк </p>
+                <p style="color: #ff876a; font-size:  8pt;"> Старший преподаватель</p>
+              </h3>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <a href="#MV-Zheltonozhskaya">
+          <div class="box">
+            <img src="static/images/MV-Zheltonozhskaya.jpeg">
+            <div class="box-content">
+              <div class="overlay">
+                <div>
+                </div>
+              </div>
+              <h3 class="title">
+                <p style="color: #f95b34; font-size: 16pt;"> М.В. Желтоножская </p>
+                <p style="color: #ff876a; font-size:  8pt;"> Старший научный сотрудник</p>
+              </h3>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <a href="#EN-Lykova">
+          <div class="box">
+            <img src="static/images/EN-Lykova.jpeg">
+            <div class="box-content">
+              <div class="overlay">
+                <div>
+                </div>
+              </div>
+              <h3 class="title">
+                <p style="color: #f95b34; font-size: 16pt;"> Е.Н. Лыкова </p>
+                <p style="color: #ff876a; font-size:  8pt;"> Старший преподаватель, по совместительству</p>
+              </h3>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 col-sm-6" style="display: none">
+        <a href="#VA-Zheltonozhsky">
+          <div class="box">
+            <img src="static/images/VA-Zheltonozhsky.png">
+            <div class="box-content">
+              <div class="overlay">
+                <div>
+                </div>
+              </div>
+              <h3 class="title">
+                <p style="color: #f95b34; font-size: 16pt;"> В.А. Желтоножский </p>
+                <p style="color: #ff876a; font-size:  8pt;"> Старший научный сотрудник</p>
+              </h3>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <a href="#GA-Krusanov">
+          <div class="box">
+            <img src="static/images/GA-Krusanov.png">
+            <div class="box-content">
+              <div class="overlay">
+                <div>
+                </div>
+              </div>
+              <h3 class="title">
+                <p style="color: #f95b34; font-size: 16pt;"> Г.А. Крусанов </p>
+                <p style="color: #ff876a; font-size:  8pt;"> Программист</p>
+              </h3>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <a href="#FR-Studenikin">
+          <div class="box">
+            <img src="static/images/FR-Studenikin.jpg">
+            <div class="box-content">
+              <div class="overlay">
+                <div>
+                </div>
+              </div>
+              <h3 class="title">
+                <p style="color: #f95b34; font-size: 16pt;"> Ф.Р. Студеникин </p>
+                <p style="color: #ff876a; font-size:  8pt;"> Младший научный сотрудник</p>
+              </h3>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <a href="#AG-Sinelnikov">
+          <div class="box">
+            <img src="static/images/AG-Sinelnikov.jpg">
+            <div class="box-content">
+              <div class="overlay">
+                <div>
+                </div>
+              </div>
+              <h3 class="title">
+                <p style="color: #f95b34; font-size: 16pt;"> А.Г. Синельников </p>
+                <p style="color: #ff876a; font-size:  8pt;"> Инженер</p>
+              </h3>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <a href="#VM-Ivanova">
+          <div class="box">
+            <img src="static/images/VM-Ivanova.jpeg">
+            <div class="box-content">
+              <div class="overlay">
+                <div>
+                </div>
+              </div>
+              <h3 class="title">
+                <p style="color: #f95b34; font-size: 16pt;"> В.М. Иванова </p>
+                <p style="color: #ff876a; font-size:  8pt;"> Секретарь кафедры</p>
+              </h3>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<div class="about" id="students">
+	<div class="container">
+    <h1>
+      Кафедра физики ускорителей и радиационной медицины ждет второкурсников, желающих продолжить обучение на кафедре.
+    </h1>
+		<div class="row">
+			<p class="text-justify fa" style="font-size: 24px; margin: 7px; margin-left: 10px; "> Сейчас перед вами стоит тяжелый выбор дальнейшего пути. </p>
+      <p class="text-justify fa" style="font-size: 24px; margin: 7px; margin-left: 10px; "> Выбор направления научной деятельности - серьезный шаг для каждого студента физического факультета.</p>
+      <p class="text-justify fa" style="font-size: 24px; margin: 7px; margin-left: 10px; "> Если вы хотели бы стать специалистом в области медицинской физики, изучить физические основы лучевой терапии, понять основные принципы работы ускорителей и изучить экспериментальные подходы в физике высоких энергий, мы ради предложить вам обучение на нашей кафедре.</p>
+
+      <h1>
+        Основные научные направления кафедры
+      </h1>
+
+      <p class="text-justify fa" style="font-size: 24px; margin: 10px">
+        <b>
+          Разработка перспективных методов повышения эффективности лучевой терапии.
+        </b>
+        Профессор Черняев А.П., доцент Варзарь С.М., доцент Белоусов А.В.
+      </p>
+
+      <p class="text-justify fa" style="font-size: 24px; margin: 10px">
+        <b>
+          Радиационная обработка сельскохозяйственных культур и других продуктов питания.
+        </b>
+        Профессор Черняев А.П., ст. преподаватель Близнюк У.А., ассистент Борщеговская П.Ю.
+      </p>
+
+      <p class="text-justify fa" style="font-size: 24px; margin: 10px">
+        <b>
+          Радиационная стерилизация имплантатов.
+        </b>
+        Профессор Черняев А.П., профессор Розанов В.В.
+      </p>
+
+      <p class="text-justify fa" style="font-size: 24px; margin: 10px">
+        <b>
+          Исследования влияния ионизирующих излучений на биологические структуры. Выявление скрытых повреждений.
+        </b>
+        Профессор Е.К. Козлова, ассистент, Борщеговская П.Ю., ст. преподаватель Близнюк У.А.
+      </p>
+
+      <p class="text-justify fa" style="font-size: 24px; margin: 10px">
+        <b>
+          Трансмиссионная вычислительная томография рассеивающих сред и интегрально-кодовая эмиссионная томография. Вычислительная томография.
+        </b>
+          Профессор С.А. Терещенко.
+      </p>
+
+      <p class="text-justify fa" style="font-size: 24px; margin: 10px">
+        <b>
+          Магнитная резонансная томография.
+        </b>
+          Профессор Ю.А. Пирогов.
+      </p>
+
+      <p class="text-justify fa" style="font-size: 24px; margin: 10px">
+        <b>
+          Медицинская физика.
+        </b>
+          Профессор Черняев А.П., вед. инженер, НИИЯФ МГУ, ст. преподаватель Лыкова Е.Н.
+      </p>
+
+      <p class="text-justify fa" style="font-size: 24px; margin: 10px">
+        <b>
+          Ядерные технологии. Перспективные источники ионизирующего излучения для лучевой терапии онкологических заболеваний с использованием ускорителей электронов.
+        </b>
+          Профессор Черняев А.П., доцент С.М.Варзарь, вед. инженер, НИИЯФ МГУ, ст.преподаватель Лыкова Е.Н., вед. инженер, НИИЯФ МГУ, с.н.с. Желтоножская М.В.
+      </p>
+
+      <p class="text-justify fa" style="font-size: 24px; margin: 10px">
+        <b>
+          Радиоэкологические исследования поведения трансурановых нуклидов и продуктов их деления.
+        </b>
+          Профессор Черняев А.П., вед. инженер, НИИЯФ МГУ, с.н.с. Желтоножская М.В., профессор Розанов В.В.
+      </p>
+
+      <h1>
+        Перечень организаций, на базе которых осуществляется практика, выполнение дипломных работ по выбранной студентами научной тематике.
+      </h1>
+
+      <p class="fa" style="font-size: 24px; margin: 10px">
+        <a class="fa-link text-justify fa fs-10" href="https://phys.msu.ru/">url | </a>
+        Физический факультет МГУ им. М. В. Ломоносова
+      </p>
+      <br>
+
+      <p class="fa" style="font-size: 24px; margin: 10px">
+        <a class="fa-link text-justify fa fs-10" href="http://www.sinp.msu.ru/">url | </a>
+        Научно-исследовательский институт ядерной физики им. Д.В. Скобелицына МГУ им. М.В. Ломоносова
+      </p>
+      <br>
+
+      <p class="fa" style="font-size: 24px; margin: 10px">
+        <a class="fa-link text-justify fa fs-10" href="http://www.fbm.msu.ru/">url | </a>
+        Факультет фундаментальной медицины МГУ
+      </p>
+      <br>
+
+      <p class="fa" style="font-size: 24px; margin: 10px">
+        <a class="fa-link text-justify fa fs-10" href="http://www.bio.msu.ru/">url | </a>
+        Биологический факультет МГУ
+      </p>
+      <br>
+
+      <p class="fa" style="font-size: 24px; margin: 10px">
+        <a class="fa-link text-justify fa fs-10" href="http://www.chem.msu.ru/rus/weldept.html">url | </a>
+        Химический факультет МГУ
+      </p>
+      <br>
+
+      <p class="fa" style="font-size: 24px; margin: 10px">
+        <a class="fa-link text-justify fa fs-10" href="http://www.itep.ru/">url | </a>
+        НИЦ Курчатовский Институт ИТЭФ
+      </p>
+      <br>
+
+      <p class="fa" style="font-size: 24px; margin: 10px">
+        <a class="fa-link text-justify fa fs-10" href="http://www.jinr.ru/">url | </a>
+        Объединенный институт ядерных исследований (ОИЯИ)
+      </p>
+      <br>
+
+      <p class="fa" style="font-size: 24px; margin: 10px">
+        <a class="fa-link text-justify fa fs-10" href="http://www.ihep.su/">url | </a>
+        ИФВЭ (Протвино)
+      </p>
+      <br>
+
+      <p class="fa" style="font-size: 24px; margin: 10px">
+        <a class="fa-link text-justify fa fs-10" href="http://fmbafmbc.ru/">url | </a>
+        ФГБУ ГНЦ ФМБЦ имени. А.И. Бурназяна
+      </p>
+      <br>
+
+      <p class="fa" style="font-size: 24px; margin: 10px">
+        <a class="fa-link text-justify fa fs-10" href="https://www.ronc.ru/">url | </a>
+        ФГБУ «НМИЦ онкологии им. Н.Н. Блохина» Минздрава России
+      </p>
+      <br>
+
+      <p class="fa" style="font-size: 24px; margin: 10px">
+        <a class="fa-link text-justify fa fs-10" href="https://www.nsi.ru/">url | </a>
+        Федеральное государственное автономное учреждение «Национальный медицинский исследовательский центр нейрохирургии имени академика Н.Н. Бурденко» Минздрава РФ
+      </p>
+      <br>
+
+      <p class="fa" style="font-size: 24px; margin: 10px">
+        <a class="fa-link text-justify fa fs-10" href="http://mrrc-obninsk.ru/">url | </a>
+        ФГБУ «Национальный медицинский исследовательский радиологический центр» Минздрава РФ
+      </p>
+      <br>
+
+      <p class="fa" style="font-size: 24px; margin: 10px">
+        <a class="fa-link text-justify fa fs-10" href="https://www.rncrr.ru/">url | </a>
+        ФГБУ «Российский научный центр рентгенорадиологии» Минздрава РФ
+      </p>
+      <br>
+
+      <p class="fa" style="font-size: 24px; margin: 10px">
+        <a class="fa-link text-justify fa fs-10" href="https://www.emcmos.ru/">url | </a>
+        АО «Европейский Медицинский Центр»
+      </p>
+      <br>
+
+      <p class="fa" style="font-size: 24px; margin: 10px">
+        <a class="fa-link text-justify fa fs-10" href="https://www.ckb2rzd.ru/">url | </a>
+        Негосударственное учреждение здравоохранения «Центральная клиническая больница №2 им. Н.А. Семашко ОАО «Российские железные дороги».
+      </p>
+      <br>
+
+
+		</div>
+	</div>
+</div>
+
+<!-- about section -->
+<div class="about" id="about">
+	<div class="container">
+    <h1 class="text-center">О кафедре</h1>
+		<div class="row">
+			<div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="static/images/about-1.jpg" class="img-fluid">
+				<!-- <span class="text-justify">S.Web Developer</span> -->
+			</div>
+			<div class="col-lg-8 col-md-8 col-sm-12 desc">
+				<h3>История</h3>
+				<p class="text-justify fa fs-10">Кафедра физики ускорителей высоких энергий (ФУВЭ) была образована в 1987 году. Первым заведующим кафедры был лауреат Государственной премии, профессор Адо Юрий Михайлович.</p>
+        <p class="text-justify fa fs-10">С 2005 года кафедрой руководит доктор физико-математических наук, профессор Черняев Александр Петрович. С момента основания кафедры учебно-научная деятельность велась по тематикам «Физика ускорителей», «Физика пучков заряженных частиц» и «Синхротронное излучение в кольцевых ускорителях».</p>
+        <p class="text-justify fa fs-10">С 1997 года на кафедре получило развитие новое направление – «Медицинская физика». Тематика данного направления состоит в использовании ускорителей и пучков заряженных частиц в медицине и биологии.</p>
+        <p></p>
+        <p class="text-justify font-weight-bold fa fs-10">С 2011 года кафедра ФУВЭ была официально переименована в кафедру физики ускорителей и радиационной медицины.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="about2">
+	<div class="container">
+    <!-- <h1 class="text-center">О кафедре</h1> -->
+		<div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+				<!-- <img src="images/about-2.jpg" class="img-fluid"> -->
+				<!-- <span class="text-justify">S.Web Developer</span> -->
+			</div>
+      <div class="col-lg-8 col-md-8 col-sm-12 desc">
+				<!-- <h3>История</h3> -->
+        <p class="text-justify fa fs-10">Начиная с 1998 года кафедра ежегодно проводит летнюю практику в Объединенном Институте Ядерных Исследований (ОИЯИ, г. Дубна), для проведения которой приглашаются специалисты из ОИЯИ, МГУ и других ведущих научных центров России. Лучшие студенты кафедры отправляются на стажировку в научные центры США и Европы.</p>
+        <p class="text-justify fa fs-10">Студенты кафедры выполняют дипломные работы в Национальной Лаборатории им. Ферми, Брукхейвенской Национальной Лаборатории, Мичиганского Университета, ЦЕРНа, Национального Института Ядерной Физики Италии и др. За последние 3 года студенты кафедры стали соавторами более 30 печатных работ, ими сделано более 20 докладов на различных конференциях и школах.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="about3">
+	<div class="container">
+    <!-- <h1 class="text-center">О кафедре</h1> -->
+		<div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-12 desc">
+        <p class="text-justify fa fs-10">Лекционные курсы студентам кафедры читают преподаватели физического, биологического, химического факультетов, факультета фундаментальной медицины, ведущие ученые Института физики высоких энергий (ИФВЭ, г. Протвино), ИТЭФ, Первого МГМУ им. И.М. Сеченова, ГНЦ «Института биофизики», МНИОИ им. П.А. Герцена, РОНЦ им. Н.Н. Блохина РАМН. Профессорско-преподавательский состав включает 10 докторов наук и 7 кандидатов наук.</p>
+        <p class="text-justify fa fs-10">Особое внимание уделяется практической подготовке студентов. Студенты выполняют лабораторные работы на базе комплекса протонно-лучевой терапии ИТЭФ (г. Москва), в МНИОИ им. П.А. Герцена, в ИФВЭ (г. Протвино).</p>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="static/images/EveryoneThere.jpg" class="img-fluid">
+				<p class="text-center">Состав кафедры. Сентябрь 2011</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="AP-Chernyaev">
+	<div class="container">
+    <!-- <h1 class="text-center">О кафедре</h1> -->
+		<div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="static/images/AP-Chernyaev.jpeg" class="img-fluid">
+				<p class="text-center">А.П. Черняев</p>
+			</div>
+      <div class="col-lg-8 col-md-8 col-sm-12 desc">
+        <h3>Черняев Александр Петрович</h3>
+        <h3 class="fa fs-15">Заведующий кафедрой, проректор МГУ (2006-2015), д. ф.-м. н., профессор</h4>
+        <p class="text-justify fa fs-10"><b>Область научных интересов:</b> взаимодействие ионизирующих излучений с веществом, применение ускорителей в медицине и технике.</p>
+        <p class="text-justify fa fs-10">Работает в области взаимодействия ионизирующего излучения с веществом, применение ускорителей в медицине и технике. Автор 7 учебных пособий. На кафедре им подготовлены и читаются 3 спецкурса и «Общий курс физики» для студентов факультета фундаментальной медицины МГУ. Под его руководством защищено 5 кандидатских диссертации и более 20 дипломных работ. Черняев А.П. - член Учёных советов МГУ, физического факультета, НИИЯФ и ОЯФ, факультета фундаментальной медицины МГУ, член двух диссертационных советов. Неоднократно руководил научными исследованиями в рамках грантов РФФИ, правительства Москвы, программы «Университеты России» и др.</p>
+        <p><br></p>
+        <a class="fa-link text-justify fa fs-10" href="https://istina.msu.ru/profile/Chernyaev/">Научные публикации Черняева А. П.</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="VV-Rozanov">
+	<div class="container">
+    <!-- <h1 class="text-center">О кафедре</h1> -->
+		<div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="static/images/VV-Rozanov.jpg" class="img-fluid">
+				<p class="text-center">В.В. Розанов</p>
+			</div>
+      <div class="col-lg-8 col-md-8 col-sm-12 desc">
+        <h3>Розанов Владимир Викторович</h3>
+        <h3 class="fa fs-15">Профессор, д. б. н.</h3>
+        <p class="text-justify fa fs-10"><b>Область научных интересов:</b> гидродинамика, разработка методик и приборов лазерного зондирования в натурных и лабораторных исследованиях, гидродинамические методы в медицине, медицинская физика, новые медицинские технологии.</p>
+        <p class="text-justify fa fs-10">Окончил физический факультет МГУ (1973). Кандидат физико-математических наук (1984). Доктор биологических наук (1999). ВНС научного центра гидрофизических исследований физического факультета. Профессор кафедры физики ускорителей и радиационной медицины. На кафедре им подготовлены и читаются спецкурсы «Физика воды, биологических сред и тканей», «Организационно-методические и нормативно-правовые аспекты научной работы». Член диссертационного совета. Подготовил 2 кандидатов наук. Опубликовал более 220 научных работ, в том числе – 2 монографии, 9 патентов РФ.</p>
+        <p><br></p>
+        <a class="fa-link text-justify fa fs-10" href="https://istina.msu.ru/profile/RozanovVV/">Научные публикации Розанова В.В.</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="EK-Kozlova">
+	<div class="container">
+    <!-- <h1 class="text-center">О кафедре</h1> -->
+		<div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="static/images/EK-Kozlova.jpg" class="img-fluid">
+				<p class="text-center">Е.К. Козлова</p>
+			</div>
+      <div class="col-lg-8 col-md-8 col-sm-12 desc">
+        <h3>Козлова Елена Карловна</h3>
+        <h3 class="fa fs-15">Профессор, д. ф.-м. н.</h3>
+        <p class="text-justify fa fs-10"><b>Область научных интересов:</b> действие ионизирующего излучения на кровь, исследование наноструктуры мембран красных клеток крови, атомная силовая микроскопия.</p>
+        <p class="text-justify fa fs-10">Козлова Е. К. - выпускница физического факультета МГУ. Профессор Первого Московского государственного медицинского университета им. И.М. Сеченова, кафедра медицинской и биологической физики. Соавтор учебника и практикума "Физика и биофизика" для студентов медицинских ВУЗов. Член диссертационного совета биологического факультета МГУ им. М.В. Ломоносова. На кафедре ФУ и РМ работает с 1997 г. Читает спецкурс и руководит дипломными и курсовыми работами студентов. Под руководством Козловой Е.К. защищено 10 дипломных работ и 2 кандидатские диссертации. Научные исследования проводятся на базе НИИ общей реаниматологии РАМН, НИИЯФ им. Д.В. Скобельцына, ОИЯИ (г. Дубна).</p>
+        <p><br></p>
+        <a class="fa-link text-justify fa fs-10" href="https://istina.msu.ru/profile/KozlovaEK/">Научные публикации Козловой Е.К.</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="VS-Horoshkov" style="display:none">
+	<div class="container">
+    <!-- <h1 class="text-center">О кафедре</h1> -->
+		<div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="static/images/VS-Horoshkov.jpg" class="img-fluid">
+				<p class="text-center">В.С. Хорошков</p>
+			</div>
+      <div class="col-lg-8 col-md-8 col-sm-12 desc">
+        <h3>Хорошков Владимир Сергеевич</h3>
+        <p><h3 class="fa fs-15">Профессор, д. т. н.</h3></p>
+        <p class="text-justify fa fs-10"><b>Область научных интересов:</b> протонная лучевая терапия.</p>
+        <p class="text-justify fa fs-10">Один из создателей и бессменный руководитель Центра ПЛТ ИТЭФ. Центр является одним из крупнейших в мире подобных экспериментальных центров: четыре специализированных лучевых установки для облучения различно локализованных опухолей, второе место в мире по числу облученных больных, пропускная способность - 250 больных в год. В 1981 году В. С. Хорошкову за создание этого центра присуждена Государственная премия СССР. В настоящее время во всём мире активно сооружаются клинические (уже не экспериментальные) центры ПЛТ. В. С. Хорошков является руководителем проекта создания первого в России клинического Центра ПЛТ в Московской городской больнице им. С. П. Боткина.</p>
+        <p><br></p>
+        <a class="fa-link text-justify fa fs-10" href="https://istina.msu.ru/profile/horoshkov/">Научные публикации Хорошкова В.С.</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="SA-Tereshchenko">
+	<div class="container">
+		<div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="static/images/SA-Tereshchenko.jpg" class="img-fluid">
+				<p class="text-center">С.А. Терещенко</p>
+			</div>
+      <div class="col-lg-8 col-md-8 col-sm-12 desc">
+        <h3>Терещенко Сергей Андреевич</h3>
+        <p><h3 class="fa fs-15">Профессор, д. ф.-м. н.</h3></p>
+        <p class="text-justify fa fs-10"><b>Область научных интересов:</b> вычислительная томография, взаимодействие излучения с веществом.</p>
+        <p class="text-justify fa fs-10">В 1977 г. окончил Московский инженерно-физический институт (МИФИ), факультет экспериментальной и теоретической физики по специальности "Дозиметрия и защита". С 1987 г. - кандидат физико-математических наук. В 1991-1999 гг. - старший научный сотрудник, доцент кафедры теоретической и экспериментальной физики МИЭТ. C 1999 г. до настоящего времени - доцент, профессор кафедры биомедицинских систем МИЭТ. C 1999 г. до настоящего времени - доцент, профессор кафедры физики ускорителей высоких энергий, профессор кафедры физики ускорителей и радиационной медицины, Отделение ядерной физики, Физический факультет, МГУ имени М.В. Ломоносова (по совместительству). С 2000 г. - доктор физико-математических наук. Автор более 100 научных трудов.</p>
+        <p><br></p>
+        <a class="fa-link text-justify fa fs-10" href="https://istina.msu.ru/profile/tsa/">Научные публикации Терещенко С.А.</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="SM-Varzar">
+	<div class="container">
+		<div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="static/images/SM-Varzar.jpg" class="img-fluid">
+				<p class="text-center">С.М. Варзарь</p>
+			</div>
+      <div class="col-lg-8 col-md-8 col-sm-12 desc">
+        <h3>Варзарь Сергей Михайлович</h3>
+        <p><h3 class="fa fs-15">Доцент, к. ф.-м. н.</h3></p>
+        <p class="text-justify fa fs-10"><b>Область научных интересов:</b> физика ускорения пучков поляризованных частиц, взаимодействие ионизирующего излучения с веществом, применение ускорителей в медицине и радиационных технологиях.</p>
+        <p class="text-justify fa fs-10">На кафедре читает 3 специальных курса, ведет семинарские занятия на факультете фундаментальной медицины МГУ. Автор 3 учебных пособий. Руководитель летней учебной практики по медицинской физике в г. Дубна. Координатор программы студенческого обмена между МГУ и университетом «Пари-Сюд» (Франция) в области медицинской физики. Под руководством Варзаря С.М. защищены 7 дипломных работ. Руководитель курсовых работ студентов 2 курса.</p>
+        <p><br></p>
+        <a class="fa-link text-justify fa fs-10" href="https://istina.msu.ru/profile/varzar/">Научные публикации Варазаря С.М.</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="TV-Gordienko" style="display:none">
+	<div class="container">
+		<div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="static/images/TV-Gordienko.jpeg" class="img-fluid">
+				<p class="text-center">Т.В. Гордиенко</p>
+			</div>
+      <div class="col-lg-8 col-md-8 col-sm-12 desc">
+        <h3>Гордиенко Татьяна Валерьевна</h3>
+        <p><h3 class="fa fs-15">Старший научный сотрудник, к. ф.-м. н.</h3></p>
+        <p class="text-justify fa fs-10"><b>Область научных интересов:</b> Воздействие излучения на биологические объекты.</p>
+        <p class="text-justify fa fs-10">Ведет на кафедре семинарские занятия по курсам: «Основы радиобиологии и радиоэкологии», «Основы биофизики и биохимии», «Физические основы медицинских приборов». Читает курс лекций для студентов кафедры психофизиологии психологического факультета «Физические основы психофизиологического эксперимента: теория и практика». Под руководством Гордиенко Т.В. защищены 5 дипломных работ. Руководитель курсовых работ студентов 2 курса.</p>
+        <p><br></p>
+        <a class="fa-link text-justify fa fs-10" href="https://istina.msu.ru/profile/GordienkoTV/">Научные публикации Гордиенко С.М.</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="YA-Bliznyuk">
+	<div class="container">
+		<div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="static/images/YA-Bliznyuk.jpg" class="img-fluid">
+				<p class="text-center">У.А. Близнюк</p>
+			</div>
+      <div class="col-lg-8 col-md-8 col-sm-12 desc">
+        <h3>Близнюк Ульяна Александровна</h3>
+        <p><h3 class="fa fs-15">Старший преподаватель, к. ф.-м. н.</h3></p>
+        <p class="text-justify fa fs-10"><b>Область научных интересов:</b> воздействие ионизирующего излучения на биологические объекты; получение изображений наноструктур мембран методом атомной силовой микроскопии и методом электропорации; изучения воздействия ионизирующего излучения на наноструктуру и морфологию клеток; использование кода EGSnrc для оценки дозы облучения в различных средах, в том числе и в клетках.</p>
+        <p class="text-justify fa fs-10">Близнюк Ульяна Александровна родилась 27 февраля 1980 года. В 2003 году она окончила физический факультет МГУ имени М.В. Ломоносова, в 2007 году защитила кандидатскую диссертацию на кафедре физики ускорителей и радиационной медицины по теме "Пространственное распределение эффективности воздействия пучка электронов при его распространении в суспензии эритроцитов.
+          Близнюк У. А. имеет более 30 печатных работ, в том числе в реферируемых журналах. Она читает спецкурс для студентов 4 курса кафедры "Дозиметрия ионизирующих излучений", ведет семинарские занятия по курсу "Общий курс физики" на 1 курсе факультета Фундаментальной медицины МГУ, поточный курс лекций "Физико-химические основы современного естествознания" для студентов 2 курса и спецкурс "Физические основы психофизиологического эксперимента" на 3 курсе факультета Психологии МГУ.</p>
+          <p><br></p>
+        <a class="fa-link text-justify fa fs-10" href="https://istina.msu.ru/profile/Bliznyuk/">Научные публикации Близнюк У.А.</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="PY-Borschegovskaya">
+	<div class="container">
+		<div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="static/images/PY-Borschegovskaya.jpg" class="img-fluid">
+				<p class="text-center">П.Ю. Борщеговская</p>
+			</div>
+      <div class="col-lg-8 col-md-8 col-sm-12 desc">
+        <h3>Борщеговская Полина Юрьевна</h3>
+        <p><h3 class="fa fs-15">Ассистент, к. ф.-м. н.</h3></p>
+        <!-- <p class="text-justify fa fs-10"><b>Область научных интересов:</b> воздействие ионизирующего излучения на биологические объекты; получение изображений наноструктур мембран методом атомной силовой микроскопии и методом электропорации; изучения воздействия ионизирующего излучения на наноструктуру и морфологию клеток; использование кода EGSnrc для оценки дозы облучения в различных средах, в том числе и в клетках.</p> -->
+        <!-- <p class="text-justify fa fs-10">Близнюк Ульяна Александровна родилась 27 февраля 1980 года. В 2003 году она окончила физический факультет МГУ имени М.В. Ломоносова, в 2007 году защитила кандидатскую диссертацию на кафедре физики ускорителей и радиационной медицины по теме "Пространственное распределение эффективности воздействия пучка электронов при его распространении в суспензии эритроцитов. Близнюк У. А. имеет более 30 печатных работ, в том числе в реферируемых журналах. Она читает спецкурс для студентов 4 курса кафедры "Дозиметрия ионизирующих излучений", ведет семинарские занятия по курсу "Общий курс физики" на 1 курсе факультета Фундаментальной медицины МГУ, поточный курс лекций "Физико-химические основы современного естествознания" для студентов 2 курса и спецкурс "Физические основы психофизиологического эксперимента" на 3 курсе факультета Психологии МГУ.</p> -->
+        <p><br></p>
+        <a class="fa-link text-justify fa fs-10" href="https://istina.msu.ru/profile/alexeevapo/">Научные публикации Борщеговскай П.Ю.</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="MV-Zheltonozhskaya">
+	<div class="container">
+		<div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="static/images/MV-Zheltonozhskaya.jpeg" class="img-fluid">
+				<p class="text-center">М.В. Желтоножская</p>
+			</div>
+      <div class="col-lg-8 col-md-8 col-sm-12 desc">
+        <h3>Желтоножская Марина Викторовна</h3>
+        <p><h3 class="fa fs-15">Старший научный сотрудник, к. т. н.</h3></p>
+        <!-- <p class="text-justify fa fs-10"><b>Область научных интересов:</b> воздействие ионизирующего излучения на биологические объекты; получение изображений наноструктур мембран методом атомной силовой микроскопии и методом электропорации; изучения воздействия ионизирующего излучения на наноструктуру и морфологию клеток; использование кода EGSnrc для оценки дозы облучения в различных средах, в том числе и в клетках.</p> -->
+        <!-- <p class="text-justify fa fs-10">Близнюк Ульяна Александровна родилась 27 февраля 1980 года. В 2003 году она окончила физический факультет МГУ имени М.В. Ломоносова, в 2007 году защитила кандидатскую диссертацию на кафедре физики ускорителей и радиационной медицины по теме "Пространственное распределение эффективности воздействия пучка электронов при его распространении в суспензии эритроцитов. Близнюк У. А. имеет более 30 печатных работ, в том числе в реферируемых журналах. Она читает спецкурс для студентов 4 курса кафедры "Дозиметрия ионизирующих излучений", ведет семинарские занятия по курсу "Общий курс физики" на 1 курсе факультета Фундаментальной медицины МГУ, поточный курс лекций "Физико-химические основы современного естествознания" для студентов 2 курса и спецкурс "Физические основы психофизиологического эксперимента" на 3 курсе факультета Психологии МГУ.</p> -->
+        <p><br></p>
+        <a class="fa-link text-justify fa fs-10" href="https://istina.msu.ru/profile/zhelton/">Научные публикации Желтоножской М.В.</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="EN-Lykova">
+	<div class="container">
+		<div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="static/images/EN-Lykova.jpeg" class="img-fluid">
+				<p class="text-center">Е.Н. Лыкова</p>
+			</div>
+      <div class="col-lg-8 col-md-8 col-sm-12 desc">
+        <h3>Лыкова Екатерина Николаевна</h3>
+        <p><h3 class="fa fs-15">Старший преподаватель</h3></p>
+        <!-- <p class="text-justify fa fs-10"><b>Область научных интересов:</b> воздействие ионизирующего излучения на биологические объекты; получение изображений наноструктур мембран методом атомной силовой микроскопии и методом электропорации; изучения воздействия ионизирующего излучения на наноструктуру и морфологию клеток; использование кода EGSnrc для оценки дозы облучения в различных средах, в том числе и в клетках.</p> -->
+        <!-- <p class="text-justify fa fs-10">Близнюк Ульяна Александровна родилась 27 февраля 1980 года. В 2003 году она окончила физический факультет МГУ имени М.В. Ломоносова, в 2007 году защитила кандидатскую диссертацию на кафедре физики ускорителей и радиационной медицины по теме "Пространственное распределение эффективности воздействия пучка электронов при его распространении в суспензии эритроцитов. Близнюк У. А. имеет более 30 печатных работ, в том числе в реферируемых журналах. Она читает спецкурс для студентов 4 курса кафедры "Дозиметрия ионизирующих излучений", ведет семинарские занятия по курсу "Общий курс физики" на 1 курсе факультета Фундаментальной медицины МГУ, поточный курс лекций "Физико-химические основы современного естествознания" для студентов 2 курса и спецкурс "Физические основы психофизиологического эксперимента" на 3 курсе факультета Психологии МГУ.</p> -->
+        <p><br></p>
+        <a class="fa-link text-justify fa fs-10" href="https://istina.msu.ru/profile/Lykova/">Научные публикации Лыковой Е.Н.</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="VA-Zheltonozhsky" style="display:none">
+	<div class="container">
+		<div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="static/images/VA-Zheltonozhsky.png" class="img-fluid">
+				<p class="text-center">В.А. Желтоножский</p>
+			</div>
+      <div class="col-lg-8 col-md-8 col-sm-12 desc">
+        <h3>Желтоножский Виктор Александрович</h3>
+        <p><h3 class="fa fs-15">Старший научный сотрудник, д. ф.-м. н.</h3></p>
+        <!-- <p class="text-justify fa fs-10"><b>Область научных интересов:</b> воздействие ионизирующего излучения на биологические объекты; получение изображений наноструктур мембран методом атомной силовой микроскопии и методом электропорации; изучения воздействия ионизирующего излучения на наноструктуру и морфологию клеток; использование кода EGSnrc для оценки дозы облучения в различных средах, в том числе и в клетках.</p> -->
+        <!-- <p class="text-justify fa fs-10">Близнюк Ульяна Александровна родилась 27 февраля 1980 года. В 2003 году она окончила физический факультет МГУ имени М.В. Ломоносова, в 2007 году защитила кандидатскую диссертацию на кафедре физики ускорителей и радиационной медицины по теме "Пространственное распределение эффективности воздействия пучка электронов при его распространении в суспензии эритроцитов. Близнюк У. А. имеет более 30 печатных работ, в том числе в реферируемых журналах. Она читает спецкурс для студентов 4 курса кафедры "Дозиметрия ионизирующих излучений", ведет семинарские занятия по курсу "Общий курс физики" на 1 курсе факультета Фундаментальной медицины МГУ, поточный курс лекций "Физико-химические основы современного естествознания" для студентов 2 курса и спецкурс "Физические основы психофизиологического эксперимента" на 3 курсе факультета Психологии МГУ.</p> -->
+        <p><br></p>
+        <a class="fa-link text-justify fa fs-10" href="https://istina.msu.ru/profile/Zheltonozhsky/">Научные публикации Желтоножского В.А.</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="GA-Krusanov">
+	<div class="container">
+		<div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="static/images/GA-Krusanov.png" class="img-fluid">
+				<p class="text-center">Г.А. Крусанов</p>
+			</div>
+      <div class="col-lg-8 col-md-8 col-sm-12 desc">
+        <h3>Крусанов Григорий Андреевич</h3>
+        <p><h3 class="fa fs-15">???</h3></p>
+        <!-- <p class="text-justify fa fs-10"><b>Область научных интересов:</b> воздействие ионизирующего излучения на биологические объекты; получение изображений наноструктур мембран методом атомной силовой микроскопии и методом электропорации; изучения воздействия ионизирующего излучения на наноструктуру и морфологию клеток; использование кода EGSnrc для оценки дозы облучения в различных средах, в том числе и в клетках.</p> -->
+        <!-- <p class="text-justify fa fs-10">Близнюк Ульяна Александровна родилась 27 февраля 1980 года. В 2003 году она окончила физический факультет МГУ имени М.В. Ломоносова, в 2007 году защитила кандидатскую диссертацию на кафедре физики ускорителей и радиационной медицины по теме "Пространственное распределение эффективности воздействия пучка электронов при его распространении в суспензии эритроцитов. Близнюк У. А. имеет более 30 печатных работ, в том числе в реферируемых журналах. Она читает спецкурс для студентов 4 курса кафедры "Дозиметрия ионизирующих излучений", ведет семинарские занятия по курсу "Общий курс физики" на 1 курсе факультета Фундаментальной медицины МГУ, поточный курс лекций "Физико-химические основы современного естествознания" для студентов 2 курса и спецкурс "Физические основы психофизиологического эксперимента" на 3 курсе факультета Психологии МГУ.</p> -->
+        <p><br></p>
+        <a class="fa-link text-justify fa fs-10" href="https://istina.msu.ru/profile/krusander/">Научные публикации Крусанова Г.А.</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="FR-Studenikin">
+	<div class="container">
+		<div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="static/images/FR-Studenikin.jpg" class="img-fluid">
+				<p class="text-center">Ф.Р. Студеникин</p>
+			</div>
+      <div class="col-lg-8 col-md-8 col-sm-12 desc">
+        <h3>Студеникин Феликс Рикардович</h3>
+        <p><h3 class="fa fs-15">Младший научный сотрудник</h3></p>
+        <!-- <p class="text-justify fa fs-10"><b>Область научных интересов:</b> воздействие ионизирующего излучения на биологические объекты; получение изображений наноструктур мембран методом атомной силовой микроскопии и методом электропорации; изучения воздействия ионизирующего излучения на наноструктуру и морфологию клеток; использование кода EGSnrc для оценки дозы облучения в различных средах, в том числе и в клетках.</p> -->
+        <!-- <p class="text-justify fa fs-10">Близнюк Ульяна Александровна родилась 27 февраля 1980 года. В 2003 году она окончила физический факультет МГУ имени М.В. Ломоносова, в 2007 году защитила кандидатскую диссертацию на кафедре физики ускорителей и радиационной медицины по теме "Пространственное распределение эффективности воздействия пучка электронов при его распространении в суспензии эритроцитов. Близнюк У. А. имеет более 30 печатных работ, в том числе в реферируемых журналах. Она читает спецкурс для студентов 4 курса кафедры "Дозиметрия ионизирующих излучений", ведет семинарские занятия по курсу "Общий курс физики" на 1 курсе факультета Фундаментальной медицины МГУ, поточный курс лекций "Физико-химические основы современного естествознания" для студентов 2 курса и спецкурс "Физические основы психофизиологического эксперимента" на 3 курсе факультета Психологии МГУ.</p> -->
+        <p><br></p>
+        <!-- <a class="fa-link text-justify fa fs-10" href="https://istina.msu.ru/profile/krusander/">Научные публикации Студеникина Ф.Р.</a> -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="AG-Sinelnikov">
+	<div class="container">
+		<div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="static/images/AG-Sinelnikov.jpg" class="img-fluid">
+				<p class="text-center">А.Г. Синельников</p>
+			</div>
+      <div class="col-lg-8 col-md-8 col-sm-12 desc">
+        <h3>Синельников Артемий Георгиевич</h3>
+        <p><h3 class="fa fs-15">Инженер</h3></p>
+        <!-- <p class="text-justify fa fs-10"><b>Область научных интересов:</b> воздействие ионизирующего излучения на биологические объекты; получение изображений наноструктур мембран методом атомной силовой микроскопии и методом электропорации; изучения воздействия ионизирующего излучения на наноструктуру и морфологию клеток; использование кода EGSnrc для оценки дозы облучения в различных средах, в том числе и в клетках.</p> -->
+        <!-- <p class="text-justify fa fs-10">Близнюк Ульяна Александровна родилась 27 февраля 1980 года. В 2003 году она окончила физический факультет МГУ имени М.В. Ломоносова, в 2007 году защитила кандидатскую диссертацию на кафедре физики ускорителей и радиационной медицины по теме "Пространственное распределение эффективности воздействия пучка электронов при его распространении в суспензии эритроцитов. Близнюк У. А. имеет более 30 печатных работ, в том числе в реферируемых журналах. Она читает спецкурс для студентов 4 курса кафедры "Дозиметрия ионизирующих излучений", ведет семинарские занятия по курсу "Общий курс физики" на 1 курсе факультета Фундаментальной медицины МГУ, поточный курс лекций "Физико-химические основы современного естествознания" для студентов 2 курса и спецкурс "Физические основы психофизиологического эксперимента" на 3 курсе факультета Психологии МГУ.</p> -->
+        <p><br></p>
+        <!-- <a class="fa-link text-justify fa fs-10" href="https://istina.msu.ru/profile/krusander/">Научные публикации Студеникина Ф.Р.</a> -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="VM-Ivanova">
+	<div class="container">
+		<div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="static/images/VM-Ivanova.jpeg" class="img-fluid">
+				<p class="text-center">В.М. Иванова</p>
+			</div>
+      <div class="col-lg-8 col-md-8 col-sm-12 desc">
+        <h3>Иванова Виктория Михайловна</h3>
+        <p><h3 class="fa fs-15">Секретарь кафедры</h3></p>
+        <!-- <p class="text-justify fa fs-10"><b>Область научных интересов:</b> воздействие ионизирующего излучения на биологические объекты; получение изображений наноструктур мембран методом атомной силовой микроскопии и методом электропорации; изучения воздействия ионизирующего излучения на наноструктуру и морфологию клеток; использование кода EGSnrc для оценки дозы облучения в различных средах, в том числе и в клетках.</p> -->
+        <!-- <p class="text-justify fa fs-10">Близнюк Ульяна Александровна родилась 27 февраля 1980 года. В 2003 году она окончила физический факультет МГУ имени М.В. Ломоносова, в 2007 году защитила кандидатскую диссертацию на кафедре физики ускорителей и радиационной медицины по теме "Пространственное распределение эффективности воздействия пучка электронов при его распространении в суспензии эритроцитов. Близнюк У. А. имеет более 30 печатных работ, в том числе в реферируемых журналах. Она читает спецкурс для студентов 4 курса кафедры "Дозиметрия ионизирующих излучений", ведет семинарские занятия по курсу "Общий курс физики" на 1 курсе факультета Фундаментальной медицины МГУ, поточный курс лекций "Физико-химические основы современного естествознания" для студентов 2 курса и спецкурс "Физические основы психофизиологического эксперимента" на 3 курсе факультета Психологии МГУ.</p> -->
+        <p><br></p>
+        <!-- <a class="fa-link text-justify fa fs-10" href="https://istina.msu.ru/profile/krusander/">Научные публикации Студеникина Ф.Р.</a> -->
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- <script src="static/vendor/jquery/jquery-3.2.1.min.js"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+<script>
+  $(document).ready(function(){
+    $("a[href*=#]").on("click", function(e){
+      var anchor = $(this);
+      $('html, body').stop().animate({
+        scrollTop: $(anchor.attr('href')).offset().top
+        - document.querySelector('.navbar').offsetHeight
+      }, 1111);
+      e.preventDefault();
+      return false;
+    });
+  });
+</script>
+<!--===============================================================================================-->
+<script type="text/javascript" src='static/js/main.js'></script>
+</body>
+</html>

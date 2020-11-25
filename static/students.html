@@ -1,0 +1,781 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="static/css/main.css">
+  <link rel="stylesheet" type="text/css" href="static/css/floating-labels.css">
+  <link rel="stylesheet" type="text/css" href="static/css/buttons.css">
+  <link rel="stylesheet" type="text/css" href="static/css/util.css">
+  <link rel="stylesheet" type="text/css" href="static/css/team.css">
+  <!-- <link rel="stylesheet" type="text/css" href="static/css/hover.css"> -->
+
+  <!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="static/css/main.css">
+  <!--===============================================================================================-->
+  <style type="text/css">
+    .card {
+      margin-top: 17px;
+      width: 100%;
+      height: 100%;
+    }
+    .img{
+      margin: 10px;
+      padding: 0;
+      position: relative;
+      width:64px;
+      height:64px;
+      left: 50%;
+    }
+
+    .img img{
+        position: absolute;
+        left:50%;
+        top:50%;
+        transform: translate(-50%, -50%);
+        max-width:100%;
+        max-height: 100%;
+    }
+
+    .box{
+      text-align: center;
+      background: #000;
+      overflow: hidden;
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 250px;
+      width:  250px;
+      margin: 25px;
+      margin-right: 0px;
+    }
+
+    .box img{
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s ease-out 0s;
+    }
+
+    .box:hover img{
+      opacity: 0.4;
+      transform: scale(1.1);
+    }
+
+    .box .box-content{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .box .title{
+      font-size: 22px;
+      font-weight: 700;
+      color: #f95b34;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0;
+      margin: 0 0 10px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+    }
+
+    .box:hover .title{
+      opacity: 1;
+    }
+
+    .box-content .overlay{
+      width: 78px;
+      height: 78px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-origin: 0 0;
+      transform: rotate(45deg) translate(-50%, -50%);
+    }
+
+    .box-content .overlay:before,
+    .box-content .overlay:after,
+    .box-content .overlay div:before,
+    .box-content .overlay div:after{
+      content: "";
+      display: block;
+      position: absolute;
+      background: #f95b34;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .box-content .overlay:before,
+    .box-content .overlay:after{
+      width: 0;
+      height: 2px;
+
+    }
+
+    .box-content .overlay div:before,
+    .box-content .overlay div:after{
+      width: 2px;
+      height: 0;
+    }
+
+    .box-content .overlay:before,
+    .box-content .overlay div:before{
+      top: 0;
+      left: 0;
+    }
+
+    .box-content .overlay:after,
+    .box-content .overlay div:after{
+      bottom: 0;
+      right: 0;
+    }
+
+    .box:hover .overlay:before,
+    .box:hover .overlay:after{
+      width: 65%;
+    }
+
+    .box:hover .overlay div:before,
+    .box:hover .overlay div:after{
+      height: 65%;
+    }
+
+    .hov_1:hover {
+      color: #F97300;
+    }
+
+    @media only screen and (max-width:990px){
+      .box{ margin-bottom: 30px; }
+    }
+
+  </style>
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg fixed-top ">
+  <!-- <img src="https://nm.mephi.ru/content/image/logo.png" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+  <a class="navbar-brand" href="/">Главная</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse " id="navbarSupportedContent">
+    <ul class="navbar-nav mr-4">
+      <li class="nav-item">
+        <a class="nav-link" href="/about">О кафедре</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="/students">Студентам</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="/materials">Учебные материалы</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="#contacts">Контакты</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<div class="about">
+  <div class="container">
+    <div class="row">
+      <h1>
+        Темы курсовых работ для студентов 2 года обучения
+      </h1>
+    </div> 
+
+    <!-- Секция рад обработки -->
+    <div class="row" style="margin-top: 10px">
+      <div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <h5 class="card-title">
+              Секция "Радиационная обработка"
+            </h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              1. Химические продукты и соединения, возникающие в сухих продуктах (чай, специи и т.д.) и продуктах мясного/рыбного происхождения после воздействия ионизирующего излучения. Методы их идентификации. (Обзор)
+            </p>
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              2. Математическое описание поведения различных популяций бактерий, находящихся в питательной среде, после воздействия ионизирующего излучения. На примере двух популяций бактерий. (Построение математической модели)
+            </p>
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              3. Методы повышения однородности распределения поглощенной дозы по объёму обрабатываемой продукции сложной формы. (Обзор)
+            </p>
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              4. Методы снижения деструктивного воздействия радиационной обработки на отдельные категории продукции. Использование радиопротекторов и других пищевых добавок. (Обзор)
+            </p>
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              5. Дозиметрические системы контроля, применяемые в пищевой промышленности в России и мире. Плюсы и минусы. (Обзор)
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Секция моделирований -->
+    <div class="row" style="margin-top: 10px">
+      <div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <h5 class="card-title">
+              Секция "Компьютерное моделирование физических процессов"
+            </h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              6. Компьютерное моделирование радиационной стерилизации костных имплантов (Компьютерное моделирование)
+            </p>
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              7. Оценка максимального пробега электронов в среде методом компьютерного моделирования (Компьютерное моделирование)
+            </p>
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              8. Сопоставление пробега частиц и античастиц эквивалентных энергий в среде (Компьютерное моделирование)
+            </p>
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              9. Проверка корректности симуляции инструментарием Geant4 движения заряженных частиц в магнитных полях (Компьютерное моделирование)
+            </p>
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              10. Сравнение взаимодействия поляризованных и неполяризованных пучков с веществом методом моделирования Монте-Карло (Компьютерное моделирование)
+            </p>
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              11. Симуляция облучения нейронных клеток (Компьютерное моделирование)
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Секция мед физики -->
+    <div class="row" style="margin-top: 10px">
+      <div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <h5 class="card-title">
+              Секция "Медицинская физика. Ядерная медицина"
+            </h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              12. Типы ускорителей, применяющиеся в медицине. Сравнение различных видов ускорителей. (Обзор)
+            </p>
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              13. Физика дистанционной лучевой терапии. Особенности терапии фотонами, электронами, протонами, ионами. (Обзор)
+            </p>
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              14. Методы лучевой диагностики. Магнитно-резонансная томография и рентгенодиагностика. (Обзор)
+            </p>
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              15. Физика ядерной медицины. Особенности радионуклидной диагностики. Физика радионуклидной терапии. (Обзор)
+            </p>
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              16. Радиобологические аспекты ядерно-физических методов в медицине. (Обзор)
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Секция ядерных реакций -->
+    <div class="row" style="margin-top: 10px">
+      <div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <h5 class="card-title">
+              Секция "Физика ядерных реакций"
+            </h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              17. Современное состояние рынка радиофармпрепаратов в мире: исследование перспективных радионуклидов в последнее десятилетие. (Обзор)
+            </p>
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              18. Назначение и способы получения изотопов в ядерной медицине. (Обзор)
+            </p>
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              19. Распределение нейтронов в каньоне линейного медицинского ускорителя. (Обзор)
+            </p>
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              20. Современное состояние проблемы утилизации радиоактивных отходов и облученного ядерного топлива на АЭС. (Обзор)
+            </p>
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              21. Глобальные выпадения: источники и поведение трансурановых нуклидов в окружающей среде. (Обзор)
+            </p>
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              22. Механизмы деструкции «горячих» частиц. (Обзор)
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+<hr>
+
+<div class="about" id="students">
+	<div class="container">
+		<div class="row">
+      <h1>
+        Основные научные направления кафедры
+      </h1>
+    </div>
+
+
+
+    <div class="row" style="margin-top: 10px">
+      <div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <h5 class="card-title">
+              Ядерные технологии. Перспективные источники ионизирующего излучения для лучевой терапии онкологических заболеваний с использованием ускорителей электронов.
+            </h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              Профессор Черняев А.П., доцент С.М.Варзарь, вед. инженер, НИИЯФ МГУ, ст.преподаватель Лыкова Е.Н., вед. инженер, НИИЯФ МГУ, с.н.с. Желтоножская М.В.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 10px">
+      <div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <h5 class="card-title">Разработка перспективных методов повышения эффективности лучевой терапии</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text" style="font-size: 24px; margin: 10px">Профессор Черняев А.П., доцент Варзарь С.М.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 10px">
+      <div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <h5 class="card-title">
+              Исследования влияния ионизирующих излучений на биологические структуры. Выявление скрытых повреждений.
+            </h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              Профессор Е.К. Козлова, ассистент, Борщеговская П.Ю., ст. преподаватель Близнюк У.А.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 10px">
+      <div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <h5 class="card-title">
+              Радиоэкологические исследования поведения трансурановых нуклидов и продуктов их деления.
+            </h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              Профессор Черняев А.П., вед. инженер, НИИЯФ МГУ, с.н.с. Желтоножская М.В., профессор Розанов В.В.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 10px">
+      <div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <h5 class="card-title">
+              Трансмиссионная вычислительная томография рассеивающих сред и интегрально-кодовая эмиссионная томография. Вычислительная томография.
+            </h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              Профессор С.А. Терещенко.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 10px">
+      <div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <h5 class="card-title">
+              Магнитная резонансная томография.
+            </h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              Профессор Ю.А. Пирогов.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 10px">
+      <div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <h5 class="card-title">
+              Медицинская физика.
+            </h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              Профессор Черняев А.П., вед. инженер, НИИЯФ МГУ, ст. преподаватель Лыкова Е.Н.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 10px">
+      <div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <h5 class="card-title">
+              Радиационная стерилизация имплантатов.
+            </h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              Профессор Черняев А.П., профессор Розанов В.В.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 10px">
+      <div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <h5 class="card-title">
+              Радиационная обработка сельскохозяйственных культур и других продуктов питания.
+            </h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              Профессор Черняев А.П., ст. преподаватель Близнюк У.А., ассистент Борщеговская П.Ю.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 10px">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text" style="font-size: 24px; margin: 10px">
+              Подробнее о каждом научном направлении, а также о программе кафедры, спецкурсах и начной деятельности, можно узнать из
+              <a href="/static/data/report.doc" class="fa fa-link"> отчёта кафедры</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+	</div>
+</div>
+
+<hr>
+
+<div class="about">
+  <div class="container">
+    <h1 class="text-center">
+      Перечень организаций, на базе которых осуществляется практика, выполнение дипломных работ по выбранной студентами научной тематике.
+    </h1>
+
+    <div class="row" style="margin-bottom: 10px;">
+      <div class="col-1">
+        <img src="https://phys.msu.ru/img/sign-fizfak-official.gif" width="64px" height="64px" class="d-inline-block align-top" alt="">
+      </div>
+      <div class="col">
+        <p class="fa" style="font-size: 24px; margin: 10px">
+          <a class="text-justify fa fs-10" href="https://phys.msu.ru/">
+            Физический факультет МГУ им. М. В. Ломоносова
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 10px;">
+      <div class="col-1">
+        <img src="http://www.sinp.msu.ru/sites/all/themes/sinp/logo.png" width="64px" height="64px" class="d-inline-block align-top" alt="">
+      </div>
+      <div class="col">
+        <p class="fa" style="font-size: 24px; margin: 10px">
+          <a class="text-justify fa fs-10" href="http://www.sinp.msu.ru/">
+            Научно-исследовательский институт ядерной физики им. Д.В. Скобелицына МГУ им. М.В. Ломоносова
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 10px;">
+      <div class="col-1">
+        <img src="http://www.fbm.msu.ru/bitrix/templates/fbm2017/images/logo.png" width="64px" height="64px" class="d-inline-block align-top" alt="">
+      </div>
+      <div class="col">
+        <p class="fa" style="font-size: 24px; margin: 10px">
+          <a class="text-justify fa fs-10" href="http://www.fbm.msu.ru/">
+            Факультет фундаментальной медицины МГУ
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 10px;">
+      <div class="col-1">
+        <img src="http://www.bio.msu.ru/i/logo_biofak.png" width="64px" height="64px" class="d-inline-block align-top" alt="">
+      </div>
+      <div class="col">
+        <p class="fa" style="font-size: 24px; margin: 10px">
+          <a class="text-justify fa fs-10" href="http://www.bio.msu.ru/">
+            Биологический факультет МГУ
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 10px;">
+      <div class="col-1">
+        <img src="http://www.chem.msu.ru/rus/logo/logo-153ru.png" width="64px" height="64px" class="d-inline-block align-top" alt="">
+      </div>
+      <div class="col">
+        <p class="fa" style="font-size: 24px; margin: 10px">
+          <a class="text-justify fa fs-10" href="http://www.chem.msu.ru/rus/weldept.html">
+            Химический факультет МГУ
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 10px;">
+      <div class="col-1">
+        <img src="http://www.itep.ru/images/logo/logoitef.png" width="64px" height="64px" class="d-inline-block align-top" alt="">
+      </div>
+      <div class="col">
+        <p class="fa" style="font-size: 24px; margin: 10px">
+          <a class="text-justify fa fs-10" href="http://www.itep.ru/">
+            НИЦ Курчатовский Институт ИТЭФ
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- TODO: переделать через шаблоны!!! -->
+    <div class="row" style="margin-bottom: 10px;">
+      <div class="col-1">
+        <img src="https://www.physcareer.ru/img/content/image/oiai.jpg" width="64px" height="64px" class="d-inline-block align-top" alt="">
+      </div>
+      <div class="col">
+        <p class="fa" style="font-size: 24px; margin: 10px">
+          <a class="text-justify fa fs-10" href="http://www.jinr.ru/">
+            Объединенный институт ядерных исследований (ОИЯИ)
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 10px;">
+      <div class="col-1">
+        <img src="http://exwww.ihep.su/ihep/util/logofr68-a.gif" width="64px" height="64px" class="d-inline-block align-top" alt="">
+      </div>
+      <div class="col">
+        <p class="fa" style="font-size: 24px; margin: 10px">
+          <a class="text-justify fa fs-10" href="http://www.ihep.su/">
+            ИФВЭ (Протвино)
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 10px;">
+      <div class="col-1">
+        <img src="http://fmbafmbc.ru/local/images/logo.png" width="64px" height="64px" class="d-inline-block align-top" alt="">
+      </div>
+      <div class="col">
+        <p class="fa" style="font-size: 24px; margin: 10px">
+          <a class="text-justify fa fs-10" href="http://fmbafmbc.ru/">
+            ФГБУ ГНЦ ФМБЦ имени. А.И. Бурназяна
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 10px;">
+      <div class="col-1">
+        <img src="https://www.ronc.ru/bitrix/templates/beauty_modern_s1/images/logo_ru.png" width="64px" height="64px" class="d-inline-block align-top" alt="">
+      </div>
+      <div class="col">
+        <p class="fa" style="font-size: 24px; margin: 10px">
+          <a class="text-justify fa fs-10" href="https://www.ronc.ru/">
+            ФГБУ «НМИЦ онкологии им. Н.Н. Блохина» Минздрава России
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 10px;">
+      <div class="col-1">
+        <img src="https://www.s-emf.ru/images/partners/nsi.png" width="64px" height="64px" class="d-inline-block align-top" alt="">
+      </div>
+      <div class="col">
+        <p class="fa" style="font-size: 24px; margin: 10px">
+          <a class="text-justify fa fs-10" href="https://www.nsi.ru/">
+            Федеральное государственное автономное учреждение «Национальный медицинский исследовательский центр нейрохирургии имени академика Н.Н. Бурденко» Минздрава РФ
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 10px;">
+      <div class="col-1">
+        <img src="https://opt-1094197.ssl.1c-bitrix-cdn.ru/upload/medialibrary/655/rncrr_new.png?155974168533924" width="64px" height="64px" class="d-inline-block align-top" alt="">
+      </div>
+      <div class="col">
+        <p class="fa" style="font-size: 24px; margin: 10px">
+          <a class="text-justify fa fs-10" href="https://www.rncrr.ru/">
+            ФГБУ «Российский научный центр рентгенорадиологии» Минздрава РФ
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 10px;">
+      <div class="col-1">
+        <img src="https://hrupkie.ru/wp-content/uploads/klinika-reproduktivnoy-i-prenatalnoy-mediciny-ems-177x140x100.png" width="64px" height="64px" class="d-inline-block align-top" alt="">
+      </div>
+      <div class="col">
+        <p class="fa" style="font-size: 24px; margin: 10px">
+          <a class="text-justify fa fs-10" href="https://www.emcmos.ru/">
+            АО «Европейский Медицинский Центр»
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 10px;">
+      <div class="col-1">
+        <img src="https://www.iknews.info/images/stories/whoiswho/img/ckb2rzd_ru.jpg" width="64px" height="64px" class="d-inline-block align-top" alt="">
+      </div>
+      <div class="col">
+        <p class="fa" style="font-size: 24px; margin: 10px">
+          <a class="text-justify fa fs-10" href="https://www.ckb2rzd.ru/">
+            Негосударственное учреждение здравоохранения «Центральная клиническая больница №2 им. Н.А. Семашко ОАО «Российские железные дороги».
+          </a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TODO: вставит коректную ссылку как их сайт вернётся в норму -->
+<!-- <p class="fa" style="font-size: 24px; margin: 10px">
+  <a class="fa-link text-justify fa fs-10" href="http://mrrc-obninsk.ru/">url | </a>
+  ФГБУ «Национальный медицинский исследовательский радиологический центр» Минздрава РФ
+</p>
+<br> -->
+
+<hr>
+
+<section id="contacts" style="color: black">
+  <div class="container">
+      <h3 class="text-center text-uppercase">Контакты</h3>
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 my-5">
+          <div class="card border-0 hov_1">
+            <div class="card-body text-center">
+              <i class="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
+              <h4 class="text-uppercase mb-5">Телефон</h4>
+              <p>8 (495) 939-13-44</p>
+              <p>8 (495) 939-49-46</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-4 my-5">
+          <div class="card border-0 hov_1">
+            <div class="card-body text-center">
+              <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
+              <h4 class="text-uppercase mb-5">Адрес</h4>
+              <p>
+                119991, ГСП-1, Москва,
+                Ленинские горы, МГУ имени М.В.Ломоносова
+                Дом 1, строение 2, Физический Факультет,
+                каб. 3-35
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-4 my-5">
+          <div class="card border-0 hov_1">
+            <div class="card-body text-center">
+              <i class="fa fa-at fa-5x mb-3" aria-hidden="true"></i>
+              <h4 class="text-uppercase mb-5">Электроная почта</h4>
+              <p>kaf-hea@physics.msu.ru</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+<script type="text/javascript">
+var current_datetime = new Date();
+document.getElementById('dep_and_date').innerHTML = 'Кафедра Физики Ускорителей и Радиационной Медицины, ' + current_datetime.getFullYear();
+</script>
+
+
+<!-- <script src="static/vendor/jquery/jquery-3.2.1.min.js"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+<script>
+  $(document).ready(function(){
+    $("a[href*=#]").on("click", function(e){
+      var anchor = $(this);
+      $('html, body').stop().animate({
+        scrollTop: $(anchor.attr('href')).offset().top
+        - document.querySelector('.navbar').offsetHeight
+      }, 1111);
+      e.preventDefault();
+      return false;
+    });
+  });
+</script>
+<!--===============================================================================================-->
+<script type="text/javascript" src='static/js/main.js'></script>
+</body>
+</html>

@@ -1,0 +1,477 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="static/css/main.css">
+  <link rel="stylesheet" type="text/css" href="static/css/floating-labels.css">
+  <link rel="stylesheet" type="text/css" href="static/css/buttons.css">
+  <link rel="stylesheet" type="text/css" href="static/css/util.css">
+  <link rel="stylesheet" type="text/css" href="static/css/team.css">
+  <!-- <link rel="stylesheet" type="text/css" href="static/css/hover.css"> -->
+
+  <!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="static/css/main.css">
+  <!--===============================================================================================-->
+  <style type="text/css">
+    .card {
+      margin-top: 17px;
+      width: 100%;
+      height: 100%;
+    }
+    .img{
+      margin: 10px;
+      padding: 0;
+      position: relative;
+      width:64px;
+      height:64px;
+      left: 50%;
+    }
+
+    .img img{
+        position: absolute;
+        left:50%;
+        top:50%;
+        transform: translate(-50%, -50%);
+        max-width:100%;
+        max-height: 100%;
+    }
+
+    .box{
+      text-align: center;
+      background: #000;
+      overflow: hidden;
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 250px;
+      width:  250px;
+      margin: 25px;
+      margin-right: 0px;
+    }
+
+    .box img{
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s ease-out 0s;
+    }
+
+    .box:hover img{
+      opacity: 0.4;
+      transform: scale(1.1);
+    }
+
+    .box .box-content{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .box .title{
+      font-size: 22px;
+      font-weight: 700;
+      color: #f95b34;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0;
+      margin: 0 0 10px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+    }
+
+    .box:hover .title{
+      opacity: 1;
+    }
+
+    .box-content .overlay{
+      width: 78px;
+      height: 78px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-origin: 0 0;
+      transform: rotate(45deg) translate(-50%, -50%);
+    }
+
+    .box-content .overlay:before,
+    .box-content .overlay:after,
+    .box-content .overlay div:before,
+    .box-content .overlay div:after{
+      content: "";
+      display: block;
+      position: absolute;
+      background: #f95b34;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .box-content .overlay:before,
+    .box-content .overlay:after{
+      width: 0;
+      height: 2px;
+
+    }
+
+    .box-content .overlay div:before,
+    .box-content .overlay div:after{
+      width: 2px;
+      height: 0;
+    }
+
+    .box-content .overlay:before,
+    .box-content .overlay div:before{
+      top: 0;
+      left: 0;
+    }
+
+    .box-content .overlay:after,
+    .box-content .overlay div:after{
+      bottom: 0;
+      right: 0;
+    }
+
+    .box:hover .overlay:before,
+    .box:hover .overlay:after{
+      width: 65%;
+    }
+
+    .box:hover .overlay div:before,
+    .box:hover .overlay div:after{
+      height: 65%;
+    }
+
+    .hov_1:hover {
+      color: #F97300;
+    }
+
+    @media only screen and (max-width:990px){
+      .box{ margin-bottom: 30px; }
+    }
+
+  </style>
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg fixed-top ">
+  <!-- <img src="https://nm.mephi.ru/content/image/logo.png" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+  <a class="navbar-brand" href="/">Главная</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse " id="navbarSupportedContent">
+    <ul class="navbar-nav mr-4">
+      <li class="nav-item">
+        <a class="nav-link" href="/about">О кафедре</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#workers">Сотрудники</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="/students">Студентам</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="/materials">Учебные материалы</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="#contacts">Контакты</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<hr>
+
+<div class="about" id="materials">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <i class="fa fa-file-word-o fa-6"></i>
+            <h5 class="card-title">Клиническая дозиметрия</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">В данном пособии рассматриваются основные
+              дозиметрические величины и их связь с характеристиками
+              поля излучения; описываются различные методы измерения
+              дозы ионизирующего излучения, а также физические
+              процессы, лежащие в основе различных методов дозиметрии;
+              особенности формирования дозных полей, производится
+              теоретическое
+              описание
+              и
+              даются
+              практические
+              рекомендации для процедуры проведения дозиметрических
+              измерений.</p>
+            <a href="/static/data/clinical_dosimetry.docx" class="fa fa-link">Скачать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <i class="fa fa-file-word-o fa-6"></i>
+            <h5 class="card-title">Медицинское оборудование в современной лучевой терапии</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Данное пособие предназначено для слушателей программы профессиональной переподготовки по специальности медицинская физика, студентов, аспирантов и научных сотрудников высших учебных заведений, работающих в области ядерной медицины. Также оно представляется полезным для врачей и специалистов, работающих в области лучевой терапии. Составлено на основе специального курса “Ядерно-физические методы в медицине”. В пособии рассматриваются современные технологии в лучевой терапии, различные установки и оборудование для получения ионизирующего излучения в лечебных целях, их устройство и варианты применения.
+            </p>
+            <a href="/static/data/medical_technic.docx" class="fa fa-link">Скачать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <i class="fa fa-file-word-o fa-6"></i>
+            <h5 class="card-title">Физика и техника протонной терапии</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">В   пособии обсуждается развитие протонной лучевой терапии в России и мире, ее место в лечении онкологических заболеваний.
+              Подробно описываются физические основы, современное техническое оснащение, основные тенденции развития этого направления в дистанционной лучевой терапии.
+              Пособие предназначено для студентов, обучающихся по   специальностям медицинская физика, физика пучков заряженных частиц и ускорительная техника, физика атомного ядра и элементарных частиц, а также для обучения по программам переподготовки и повышения квалификации медицинских физиков. Кроме того оно полезно для студентов медицинских вузов и практикующих врачей.
+            </p>
+            <a href="/static/data/proton_therapy.docx" class="fa fa-link">Скачать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+			<div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <i class="fa fa-file-pdf-o fa-6"></i>
+            <h5 class="card-title">Радиационные технологии</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              Монография подготовлена для сотрудников, студентов, аспирантов, специализирующихся в области использования ядерных технологий и методов ядер-
+              ной физики в медицине, народном хозяйстве и науке. Монография составлена на
+              основе курсов лекций «Ускорители заряженных частиц», «Взаимодействие ионизирующего излучения с веществом» и «Ядерно-физические методы в медицине»,
+              «Радиационные технологии», читавшихся на физическом факультете Московского университета. Использованы также материалы докладов и научных обзоров,
+              изданных в ведущих российских научных журналах. Настоящая монография не
+              имеет аналогов в российской и зарубежной научной литературе.
+              Монография предназначена сотрудникам и студентам физических, химических,
+              биологических, медицинских, инженерных, а также других естественно-научных
+              специальностей. Книга будет полезна специалистам, работающим в разных областях науки и отраслях народного хозяйства, а также бизнесменам.
+            </p>
+            <a href="/static/data/Chernyaev_RadiactiveTech.pdf" class="fa fa-link">Скачать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+			<div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <i class="fa fa-file-word-o fa-6"></i>
+            <h5 class="card-title"> Введение в брахитерапию.</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              Пособие предназначено для слушателей дополнительной профессиональной образовательной программы профессиональной переподготовки в области разработки, эксплуатации и применения высокотехнологичных систем для лучевой терапии, а также для студентов, обучающихся по специальностям «Ядерная физика», «Физика и техника ускорителей», «Медицинская физика». Оно может оказаться также полезным студентам, аспирантам, докторантам и специалистам, планирующим работать в области, связанной с проведением брахитерапии.
+              В данном пособии рассматриваются основные понятия, необходимые для понимания процессов, происходящих при подготовке и проведении брахитерапии, классификация брахитерапии, основные источники излучения, радиобиология и клиническое применение.
+            </p>
+            <a href="/static/data/BrachyIntro.docx" class="fa fa-link">Скачать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+			<div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <i class="fa fa-file-word-o fa-6"></i>
+            <h5 class="card-title"> Физические методы визуализации в медицинской диагностике</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              Пособие предназначено для студентов, аспирантов, докторантов и специалистов, обучающихся по программе переподготовки Медицинская физика. Также может быть полезным для медицинских физиков, рентгенлаборантов и врачей, работающих в отделениях лучевой диагностики.
+              В данном пособии рассматриваются современные методы визуализации: история их развития, физические основы, область применения и классификация получаемых изображений. Представлены их ограничения и недостатки.
+              В приложении приведены актуальные статистические данные по использованию методов в клинической практике в России.
+              Ключевые слова: лучевая диагностика, рентгенография, КТ, МРТ, ОФЭКТ, ПЭТ, ПЭТ-КТ, ПЭТ-МРТ.
+            </p>
+            <a href="/static/data/vis_met.docx" class="fa fa-link">Скачать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+			<div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <i class="fa fa-file-powerpoint-o fa-6"></i>
+            <h5 class="card-title"> Лекция 14. Ускорители в радиационных технологиях</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+
+            </p>
+            <a href="/static/data/Letc14.Accelerators_radio_tech.ppt" class="fa fa-link">Скачать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+			<div class="col">
+        <div class="card">
+          <div class="card-header" style="color: #b21414">
+            <i class="fa fa-file-powerpoint-o fa-6"></i>
+            <h5 class="card-title"> Лекция 15. Ядерная физика в медицине</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+
+            </p>
+            <a href="/static/data/lec15.pptx" class="fa fa-link">Скачать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+	</div>
+</div>
+
+
+
+<footer>
+  <hr>
+  <div class="row justify-content-around">
+    <div class="col">
+      <p style="text-align: right;">© Физический факультет МГУ имени М.В. Ломоносова</p>
+      </div>
+    <div class="col" >
+      <p id="dep_and_date" style="text-align: left;"></p>
+    </div>
+  </div>
+  <hr>
+  <div class="row justify-content-center">
+    <div class="col">
+      <div class="img">
+        <p style="text-align: center;">
+          <a href="https://phys.msu.ru/"><img src="https://phys.msu.ru/img/sign-fizfak-official.gif" width="64px" height="64px" class="d-inline-block align-top" alt=""></a>
+        </p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="img">
+        <p style="text-align: center;">
+          <a href="http://www.sinp.msu.ru/"><img src="http://www.sinp.msu.ru/sites/all/themes/sinp/logo.png" width="64px" height="64px" class="d-inline-block align-top" alt=""></a>
+        </p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="img">
+        <p style="text-align: center;">
+          <a href="http://www.jinr.ru/"><img src="https://www.physcareer.ru/img/content/image/oiai.jpg" width="64px" height="64px" class="d-inline-block align-top" alt=""></a>
+        </p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="img">
+        <p style="text-align: center;">
+          <a href="http://www.amphr.ru/"><img src="https://static.tildacdn.com/tild3163-3839-4136-a435-616132636438/--4.png" width="64px" height="64px" class="d-inline-block align-top" alt=""></a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+</footer>
+
+<section id="contacts" style="color: black">
+  <div class="container">
+      <h3 class="text-center text-uppercase">Контакты</h3>
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 my-5">
+          <div class="card border-0 hov_1">
+            <div class="card-body text-center">
+              <i class="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
+              <h4 class="text-uppercase mb-5">Телефон</h4>
+              <p>8 (495) 939-13-44</p>
+              <p>8 (495) 939-49-46</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-4 my-5">
+          <div class="card border-0 hov_1">
+            <div class="card-body text-center">
+              <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
+              <h4 class="text-uppercase mb-5">Адрес</h4>
+              <p>
+                119991, ГСП-1, Москва,
+                Ленинские горы, МГУ имени М.В.Ломоносова
+                Дом 1, строение 2, Физический Факультет,
+                каб. 3-35
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-4 my-5">
+          <div class="card border-0 hov_1">
+            <div class="card-body text-center">
+              <i class="fa fa-at fa-5x mb-3" aria-hidden="true"></i>
+              <h4 class="text-uppercase mb-5">Электроная почта</h4>
+              <p>kaf-hea@physics.msu.ru</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+<script type="text/javascript">
+var current_datetime = new Date();
+document.getElementById('dep_and_date').innerHTML = 'Кафедра Физики Ускорителей и Радиационной Медицины, ' + current_datetime.getFullYear();
+</script>
+
+
+<!-- <script src="static/vendor/jquery/jquery-3.2.1.min.js"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+<script>
+  $(document).ready(function(){
+    $("a[href*=#]").on("click", function(e){
+      var anchor = $(this);
+      $('html, body').stop().animate({
+        scrollTop: $(anchor.attr('href')).offset().top
+        - document.querySelector('.navbar').offsetHeight
+      }, 1111);
+      e.preventDefault();
+      return false;
+    });
+  });
+</script>
+<!--===============================================================================================-->
+<script type="text/javascript" src='static/js/main.js'></script>
+</body>
+</html>

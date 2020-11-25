@@ -1,0 +1,15 @@
+.wcard {
+  display:inline-block;
+  position:relative;
+}
+.wcard div {
+  display: none;
+  position: absolute;
+  bottom: 10px; left: 0px;
+  background-color: rgba(0,0,0,.4);
+  padding: 5px 5px 5px 10px;
+  color: white
+}
+.wcard:hover div {
+  display: block
+}
